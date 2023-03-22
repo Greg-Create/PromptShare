@@ -1,0 +1,341 @@
+.Header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1B1B1B;
+    height: 6rem;
+    border-color:  #428cff;
+    border-width: 30px;
+}
+
+.Header h3{
+    margin-left:7rem;
+    color: white;
+}
+
+.homebtn{
+    text-decoration: none;
+}
+
+
+.Header h3:nth-child(1){
+    cursor: pointer;
+}
+
+
+.Links{
+    color: white;
+    display: flex;
+
+}
+
+
+
+.hide{
+    display: none;
+}
+
+
+.Links{
+    
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    align-items: center;
+    
+
+}
+
+.Links h3{
+    font-weight:normal;
+    cursor: pointer;
+}
+
+.Links h3:hover{
+    opacity: 0.8;
+}
+
+
+.Links h3:nth-child(2){
+    margin-left: 4rem;
+}
+.Links h3:nth-child(3){
+    margin-left: 4rem;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    margin-right: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons button{
+    margin:0.3rem;
+    height: 3rem;
+    font-size: 14px;
+    border-radius: 15px;
+    border: none;
+    width:6rem;
+    background-color: #428cff;
+    color: white;
+}
+
+.profilePicture{
+    border-radius: 50%;
+    height:2rem;
+    width:2rem;
+    border: 1.5px solid #428cff;
+    padding: 1px;
+   
+    
+}
+
+.move{
+    animation-name: hide;
+ opacity: 0;
+ animation-duration: 1s;
+}
+
+@keyframes hide{
+    from{opacity: 1;}
+    to{opacity:0}
+}
+
+
+
+.profilePicturedrp{
+    border-radius: 50%;
+    height:3rem;
+    width:3rem;
+    padding: 1px;
+    animation: movement;
+
+}
+
+.profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    border-radius:20px;
+    width:10rem;
+    border: 1.5px solid #428cff;
+    margin-left: 1.5rem;
+    height: 3rem;
+}
+
+.menu{
+    position: absolute;
+    top:80px;
+    right:20px;
+    background-color: white;
+    border-radius: 20px;
+    padding:10px 20px;
+    width:200px;
+    animation-name: appear;
+    animation-duration: 0.8s;
+    display: flex;
+    flex-direction: column;
+}
+
+.icons{
+    width:25px;
+    height:25px;
+    margin-right: 0px;
+    opacity: 0.5;
+    transition: 0.5s;
+    
+}
+
+.menu-item{
+    display: flex;
+    margin: 10px auto;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    width:100%;
+    padding-top: 20px;
+    height:0.5rem;
+    margin-left:30px;
+}
+
+.last{
+    margin-bottom: 2rem;
+}
+
+.last:hover{
+    color: rgb(212, 33, 9);
+}
+
+.hide{
+    display: none;
+}
+
+.close{
+    animation-name: appear;
+    animation-duration:1s ;
+    position: absolute;
+    font-size: 18px;
+    top:30px;
+    opacity: 0.8;
+
+}
+
+@keyframes appear{
+    from{opacity:0}
+    to{opacity:0.8}
+}
+
+.menu-item:hover .icons{
+    opacity:1;
+}
+
+.menu-item:hover  a{
+color:#428cff
+}
+
+.menu-item a{
+    max-width: 100px;
+    margin-left:10px;
+    transition: 0.5s;
+    margin-left:10px;
+    
+}
+
+ @keyframes appear {
+    from{opacity: 0; width:180px; top:60px}
+    to{opacity:1;width:200px; top:80px}
+}
+
+.menu::before{
+    content:"";
+    position: absolute;
+    top:-5px;
+    right:20px;
+    height:20px;
+    width:20px;
+    background-color: white;
+    transform: rotate(45deg);
+}
+
+ ul{
+list-style-type: none;
+}
+
+.profile:hover{
+    opacity: 0.8;
+    cursor: pointer;
+    user-select: none;
+}
+
+.profile p{
+    font-size: 12px;
+}
+
+
+
+.buttons button:hover{
+  opacity: 0.8;
+}
+
+
+
+
+.hamburger_container{
+    display: none;
+}
+
+.Burger{
+    width:2rem;
+    height:0.25rem;
+    border-radius: 10px;
+    background-color: white;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+}
+
+
+    .Hamburger{
+        width:2rem;
+        height:2rem;
+        display: flex;
+        justify-content: space-around;
+        flex-flow:column nowrap ;
+        z-index: 20;
+        margin-right: 3rem;
+    
+    }
+
+    .responsive{
+        display: none;
+    }
+   
+
+
+    @media (max-width:1000px){
+        .hamburger_container{
+            display: block;
+        }
+
+        .Links{
+            display: none;
+        }
+
+        .buttons{
+            display: none;
+        }
+        .responsive{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    
+        .Menu_Links{
+        background-color: blue;
+        display: flex;
+        flex-flow: column nowrap;
+        position: fixed;
+        top:0;
+        right: 0;
+        height:100vh;
+        width:150px;
+        padding-top: 3.5rem;
+        align-items: left;
+        text-align: center;
+        }
+
+
+.Menu_Links h3{
+    margin-left: 2rem;
+}
+        .Menu_Links button{
+    height: 3rem;
+    font-size: 14px;
+    border-radius: 15px;
+    border: none;
+    width:5rem;
+    background-color: #428cff;
+    color: white;
+    padding: 0;
+    margin: 1rem;
+    margin-left:3rem;
+
+        }
+
+        .close_icon{
+            color: white;
+            position:relative ;
+            bottom:2rem;
+            left:1rem;
+            
+        }
+
+      
+    }

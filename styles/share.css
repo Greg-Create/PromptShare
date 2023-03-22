@@ -1,0 +1,127 @@
+.share{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 20px;
+    box-shadow:0 0 8px 0 rgba(0,0,0,0.40);
+    width: 32rem;
+    height: 40rem;
+    margin-top:2rem
+}
+
+
+
+.s{
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
+
+.share textarea{
+border-radius: 20px;
+border-width: 0.5px;
+border-color: black;
+font-size:10px;
+outline: none;
+text-align: center;
+padding:20px;
+
+}
+
+textarea{
+    resize: none;
+}
+
+.category_grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+gap:10px;
+
+}
+
+.share .title textarea {
+    height:2rem;
+    width:20rem;
+    font-size:16px;
+    padding-top:5px;
+
+}
+
+.share .prompt textarea{
+    height:6rem;
+    width:20rem;
+    font-size:16px;
+    padding-top:5px;
+}
+
+.share .reply textarea{
+    height:5rem;
+    width:20rem;
+    font-size:16px;
+    padding-top: 5px;;
+    border-width: 0.5px;
+}
+
+
+.cate{
+    height:2.4rem;
+    width:6rem;
+    border-radius: 20px;
+    color:#428cff;
+    border-width:1px;
+    box-shadow:0 0 2px 0 rgba(0,0,0,0.25);
+    border: none;
+    background-color: white;
+    font-weight: bold;
+    padding: 5px;
+    margin-left: 1rem;
+    font-size:12px
+
+}
+
+.checked{
+    background-color: #428cff;
+    color:white;
+}
+
+
+
+.cate:hover{
+    opacity: 0.6;
+}
+
+
+
+.shareP{
+    height:5rem;
+    width:8rem;
+    margin:1rem;
+    border:none;
+    border-radius: 14px;
+    background-color:  #428cff;;
+    color:white;
+}
+
+.shareP:hover{
+opacity:0.8;
+}
+
+.reply p{
+    color:#428cff;
+    text-align: center;
+}
+
+.prompt p{
+    color:#428cff;
+    text-align: center;
+}
+
+.categories p{
+    color: #428cff;
+    text-align: center;
+}

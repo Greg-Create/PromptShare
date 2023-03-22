@@ -1,0 +1,96 @@
+.Front{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-top:1rem;
+    height:20rem;
+    margin-left: 5rem;
+    background-color: #1B1B1B;;
+}
+
+
+
+
+.headline{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    width:30rem;
+    color: white;
+}
+
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    margin-left: 3rem;
+}
+
+.searchbar input{
+   height: 3rem;
+   border: none;
+   border-top-left-radius: 30px;
+   border-bottom-left-radius: 30px;
+   width: 20rem;;
+   outline: none;
+   padding-left: 1rem;
+}
+
+.searchbar button{
+    height: 3.125rem;
+    border: none;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 5rem;
+    background-color: #428cff;
+    color: white;
+    
+ }
+
+ .searchbar button:hover{
+   opacity: 0.8;
+ }
+
+ .image{
+width:26rem;
+height: 26rem;
+margin-right: 1rem;
+ }
+.Front_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height:30rem;
+}
+ 
+
+@media (max-width:1000px) {
+    .Front_container{
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+
+    .Front{
+        margin: 0;
+    }
+
+    .image{
+        display: none;
+    }
+}
+
+
+@media (max-width:500px) {
+  .headline{
+    width:20rem
+  }
+
+  .searchbar input{
+  
+    width: 15rem;;
+    margin-left: -3rem;
+  
+ }
+}
