@@ -39,7 +39,7 @@ function SignIn() {
          
           <button onClick={() => signInWithEmail()}>Submit</button>
           <p>or</p>
-          <GoogleButton onClick={()=>loginWithGoogle()}/>
+          <GoogleButton id="google" onClick={()=>loginWithGoogle()}/>
 
           
         </div>

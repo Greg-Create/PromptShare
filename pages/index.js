@@ -4,6 +4,7 @@ import Home from "./Home"
 import Search from "./Search"
 import Share from "./SharePage/Share"
 import Head from 'next/head';
+import { UserContext } from "./Components/contexts/UserContext";
 
 
 

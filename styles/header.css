@@ -7,6 +7,8 @@
     height: 6rem;
     border-color:  #428cff;
     border-width: 30px;
+    z-index:10;
+
 }
 
 .Header h3{
@@ -81,6 +83,17 @@
     width:6rem;
     background-color: #428cff;
     color: white;
+    transition:1s;
+}
+
+.apr{
+    animation-name: smootha;
+    animation-duration: 2s;
+}
+
+@keyframes smootha{
+    from{opacity: 0;}
+    to{opacity:1}
 }
 
 .profilePicture{
@@ -93,10 +106,15 @@
     
 }
 
+.modifiedLink{
+    text-decoration: none;
+    color:black;
+}
+
 .move{
     animation-name: hide;
  opacity: 0;
- animation-duration: 1s;
+ animation-duration: 0.4s;
 }
 
 @keyframes hide{
@@ -111,7 +129,6 @@
     height:3rem;
     width:3rem;
     padding: 1px;
-    animation: movement;
 
 }
 
@@ -122,10 +139,11 @@
     justify-content: space-evenly;
     background-color: white;
     border-radius:20px;
-    width:10rem;
+    width:8rem;
     border: 1.5px solid #428cff;
     margin-left: 1.5rem;
     height: 3rem;
+    transition: 0.8s;
 }
 
 .menu{
@@ -140,6 +158,8 @@
     animation-duration: 0.8s;
     display: flex;
     flex-direction: column;
+    box-shadow:0 0 4px 0 rgba(0,0,0,0.20);
+
 }
 
 .icons{
@@ -168,16 +188,21 @@
     margin-bottom: 2rem;
 }
 
-.last:hover{
+.last:hover .logout{
     color: rgb(212, 33, 9);
 }
+
+.last:hover .lastIcon{
+    color: rgb(212, 33, 9);
+}
+
 
 .hide{
     display: none;
 }
 
 .close{
-    animation-name: appear;
+    animation-name: appears;
     animation-duration:1s ;
     position: absolute;
     font-size: 18px;
@@ -186,18 +211,25 @@
 
 }
 
-@keyframes appear{
+@keyframes appears{
     from{opacity:0}
     to{opacity:0.8}
 }
 
 .menu-item:hover .icons{
     opacity:1;
+    color: #428cff;
 }
 
 .menu-item:hover  a{
 color:#428cff
 }
+
+.heading h5{
+    margin-top: 0.5rem;
+}
+
+
 
 .menu-item a{
     max-width: 100px;
@@ -221,6 +253,7 @@ color:#428cff
     width:20px;
     background-color: white;
     transform: rotate(45deg);
+
 }
 
  ul{
@@ -338,4 +371,12 @@ list-style-type: none;
         }
 
       
+    }
+
+
+    .dropDownheading{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }

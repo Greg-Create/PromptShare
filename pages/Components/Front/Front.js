@@ -31,7 +31,7 @@ props.change(search)
             <button >Search</button>
             </div>
             </div>
-            <img className="image" src={"https://o.remove.bg/downloads/66411bc0-7d12-4650-8ae6-b98e97811234/istockphoto-950680410-612x612-removebg-preview.png"} />
+            <img className="image" src={"./image.png"} />
             
         </div>
     )

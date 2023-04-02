@@ -1,0 +1,235 @@
+.Navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: white;
+    height:30rem;
+    box-shadow:0 0 4px 0 rgba(0,0,0,0.40);
+margin-right:10rem;
+    width:14rem;
+}
+
+.profileGrid{
+    display: grid;
+    grid-template-columns: auto auto ;
+    column-gap:50px;
+
+}
+
+.profileBlock{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow:0 0 4px 0 rgba(0,0,0,0.20);
+    height:26rem;
+    width: 40rem;
+    padding: 20px;
+
+}
+.myProfilePageContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.editName input{
+    background-color: #FAFAFC;
+    border:none;
+    outline: none;
+    height:2rem;
+    width:16rem;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+
+.editName input:hover{
+opacity: 0.7;
+}
+
+.editName p{
+    user-select: none;
+    cursor: pointer;
+}
+
+.editName textarea{
+    outline:none;
+    background-color: #FAFAFC;
+    border:none;
+    outline: none;
+    height:4rem;
+    width:16rem;
+    border-radius: 10px;
+   padding: 5px;
+}
+
+.profilePictureContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left:2rem;
+    background-color: white;
+    height:20rem;
+    width:16rem;
+    border-radius: 20px;
+    box-shadow:0 0 4px 0 rgba(0,0,0,0.20);
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 3.5rem“I want you to act as a research assistant and gather information on a specific topic for me”
+;
+}
+
+.profilePictureContainer img{
+    height:12rem;
+    width: 12rem;
+    border-radius: 10px;
+}
+
+.profilePictureContainer button{
+    outline: none;
+    border:none;
+    background-color: #428cff;
+    color: white;
+    width:12rem;
+    height:3rem;
+    border-radius: 20px;
+    transition: 0.8s;
+}
+
+.profilePictureContainer button:hover{
+    opacity: 0.8;
+}
+.profileBlock h4{
+    user-select: none;
+    cursor: pointer;
+}
+
+.myProfileContainer h1{
+    user-select: none;
+    cursor: pointer;
+}
+
+.updateBtn{
+    background-color: #428cff;
+    border: none;
+    outline:none;
+    color:white;
+    width:8rem;
+    height:3rem;
+    border-radius: 20px;
+    margin-top:1.5rem;
+    transition: 0.8s;
+}
+
+.updateBtn:hover{
+    opacity: 0.8;
+}
+
+.top{
+    margin-top: 5rem;
+}
+
+.homeBtn{
+    float: right;
+    margin-right: 1rem;
+    background-color: white;
+    border: none;
+    outline:none;
+    height:2rem;
+    border-radius: 20px;
+    box-shadow:0 0 4px 0 rgba(0,0,0,0.20);
+    padding: 10px;
+    font-size: 10px;
+    transition: 0.8s;
+}
+
+.homeBtn:hover{
+    box-shadow:0 0 2px 0 rgba(0,0,0,0.20);
+    opacity: 0.6;
+
+}
+
+.myProfileContainer{
+    display:flex;
+    flex-direction: column;
+    margin-left:-6rem;
+
+}
+
+.profileHeading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.updateprofilePics{
+    border-radius: 50%;
+    border:2px solid #428cff;
+}
+
+.myPosts{
+    display: block;
+}
+
+.postGrid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.selected{
+    background-color: #428cff;
+    color: white;
+    border-radius: 20px;
+    display: absolute;
+    width:16rem;
+    margin: 0;
+    display: flex;
+    height:3rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    text-align: center;
+    animation: glidein;
+    animation-duration: 0.6s;
+    cursor: pointer;
+    user-select: none;
+}
+
+@keyframes glidein{
+    from{width:12rem};
+    from{width:16rem}
+
+}
+
+
+.profile-item{
+    height:3rem;
+    width:10rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+.profile-item .icons{
+margin-right: 1rem;
+
+}
+
+.selected .icons{
+    margin-right: 1rem;
+    color: white;
+opacity: 1;
+margin-left:3rem;
+    }
+
+.pageContainer{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5rem;
+}

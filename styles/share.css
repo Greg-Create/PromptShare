@@ -8,7 +8,8 @@
     box-shadow:0 0 8px 0 rgba(0,0,0,0.40);
     width: 32rem;
     height: 40rem;
-    margin-top:2rem
+    margin-top:2rem;
+    margin-bottom: 3rem
 }
 
 
@@ -23,12 +24,13 @@
 
 .share textarea{
 border-radius: 20px;
-border-width: 0.5px;
-border-color: black;
 font-size:10px;
 outline: none;
 text-align: center;
 padding:20px;
+box-shadow:0 0 8px 0 rgba(0,0,0,0.40);
+border: none;
+
 
 }
 
