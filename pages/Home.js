@@ -2,7 +2,7 @@ import Header from "./Components/Header/Header";
 import Front from "./Components/Front/Front";
 import Categories from "./Components/Categories/Categories";
 import Carouselle from "./Components/Carouselle/Carouselle";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef} from "react";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,6 +13,7 @@ function Home(props) {
   const [profile, setProfile] = useState(null);
   const notify = () => toast.success("Succesfully Shared Prompt");
   const [toasts, setToasts] = useState(false);
+
   
 
   useEffect(() => {

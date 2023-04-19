@@ -1,17 +1,32 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState,useRef } from "react";
 import Card from "../Cards/Cards";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
-import { UserContext } from "../contexts/UserContext";
+import { useProfile, UserContext } from "../contexts/UserContext";
+import Aos from "aos";
+import "aos/dist/aos.css"
+
+
 
 function Carouselle(props) {
   const supabase = useSupabaseClient();
   const session = useSession();
   const [posts, setPosts] = useState([]);
+  const profile = useProfile()
+  const [isVisible, setVisible] = React.useState(true);
+  const domRef = useRef();
+  
+  useEffect(() => {
+Aos.init({duration:2000})
+},[])
+
+    
+
  
+
 
   useEffect(() => {
     supabase
@@ -20,6 +35,12 @@ function Carouselle(props) {
       .then((result) =>{ 
         setPosts(result.data)});
   }, []);
+
+
+  
+
+
+
 
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -78,7 +99,7 @@ function Carouselle(props) {
   };
 
   return (
-    <div className="Carouselle">
+    <div data-aos="fade-up" className={`Carouselle `} ref={domRef}>
       <div className="popular">
         <h1>{props.title}</h1>
       </div>

@@ -9,6 +9,8 @@ import "@/styles/Home.module.css";
 import "@/styles/share.css";
 import "@/styles/signin.css";
 import "@/styles/profile.css";
+import "@/styles/userProfile.css";
+import "@/styles/postPage.css";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { useState } from "react";

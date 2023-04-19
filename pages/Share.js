@@ -1,14 +1,15 @@
 import React from "react";
-import Header from "../Components/Header/Header";
+import Header from "./Components/Header/Header";
 import { useState } from "react";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
-import SignIn from "../SignInPage/SignIn";
+import SignIn from "./SignIn";
 import Link from "next/link";
+import { useProfile } from "./Components/contexts/UserContext";
 
-import Home from "../Home"
+import Home from "./Home"
 import Router from "next/router";
-import { UserProvider } from "../Components/contexts/UserContext";
+import { UserProvider } from "./Components/contexts/UserContext";
 
 
 function Share(props) {
@@ -31,11 +32,15 @@ function Share(props) {
   const session = useSession();
   const supabase = useSupabaseClient();
   const router = useRouter();
+  const profile = useProfile()
+
+  //Focus on a niche, add personalization forms for personalized prompts to promp page;
+  //
 
 
-  if (!session) {
+  /* if (!profile) {
     return <SignIn />;
-  }
+  } */
 
   function toggle(index) {
     if (select.includes(index)) {

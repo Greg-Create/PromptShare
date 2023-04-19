@@ -1,4 +1,4 @@
-import react, { useState, useContext, useEffect } from "react";
+import react, { useState, useContext, useEffect , useCallback} from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import Link from "next/link";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
@@ -8,7 +8,7 @@ import { FcLike } from "react-icons/fc";
 import { IoMdSettings } from "react-icons/io";
 import { BiLogOut } from "react-icons/bi";
 import Router from "next/router";
-import { useProfile } from "../contexts/UserContext";
+import { useProfile,useProfileUpdate,userProfileLogout } from "../contexts/UserContext";
 import { useLogout } from "../contexts/UserContext";
 
 
@@ -22,22 +22,33 @@ function Header(props) {
   const session =  useSession();
   const supabase = useSupabaseClient();
   const [toast,setToast] = useState(false);
-  const profile = useProfile()
+  const profile = useProfile();
+  const updateProfiles = useProfileUpdate();
+  const userUpdate = userProfileLogout();
+  
 
 
 
+  
+ 
+  
+  
 
   function menu() {
     setOpen(!open);
   };
 
+
+
+
+
   
 
 function sharePage(){
   Router.push({
-    pathname: '../SharePage/Share',
+    pathname: '/Share',
     query: { change: setToast }
-}, '../SharePage/Share')
+}, '/Share')
 }
 
 if(toast){
@@ -47,17 +58,22 @@ if(toast){
 
   async function logout(){
 await supabase.auth.signOut()
+userUpdate();
+Router.push({
+  pathname: '/',
+  query:{change:setToast}
+}, '/Share')
   }
 
 
   if (!session) {
     return (
       
-      <div className="Header">
+      <div className={`Header `}>
 
         
         <Link className="homebtn" href="/">
-          <h3>ChatGPT</h3>
+          <h3>PromptPenguin</h3>
         </Link>
 
         <div className={`Links `}>
@@ -67,9 +83,11 @@ await supabase.auth.signOut()
         </div>
 
         <div className={`buttons  `}>
-        <button onClick={()=>sharePage()}>Share</button>
-          <Link href="../SignInPage/SignIn">
-            <button>Sign In</button>
+        <Link href="/SignIn">
+        <button className={`sharebtn`} >Share</button>
+        </Link>
+          <Link href="/SignIn">
+            <button className={`signinbtn`}>Sign In</button>
           </Link>
         </div>
 
@@ -91,7 +109,7 @@ await supabase.auth.signOut()
               <button onClick={()=>sharePage()}>Share</button>
 
               {}
-              <Link href="../SignInPage/SignIn">
+              <Link href="/SignIn">
               <button>Sign In</button>
               </Link>
             </div>
@@ -103,26 +121,26 @@ await supabase.auth.signOut()
     );
   } else {
     return (
-      <div className="Header">
+      <div className={`Header `}>
                 
 
         <Link className="homebtn" href="/">
-          <h3>ChatGPT</h3>
+          <h3 className={``}>ChatGPT</h3>
         </Link>
 
         <div className={`Links `}>
-          <h3 href="#">About</h3>
-          <h3 href="#">OpenAi</h3>
-          <h3 href="#">FAQ</h3>
+          <h3 className={` regularText2`} href="#">About</h3>
+          <h3 className={` regularText2`} href="#">OpenAi</h3>
+          <h3 className={`"regularText2`} href="#">FAQ</h3>
         </div>
 
-        <div className={`buttons  `}>
-            <button onClick={()=>sharePage()}>Share</button>
+        <div className={`buttons `}>
+            <button className={` sharebtn`} onClick={()=>sharePage()}>Share</button>
           
           <div onClick={() => setDropdown(!dropdown)}>
-            <div className="profile">
+            <div className={` profile`}>
               <p className={`${dropdown ? "close" : "hide"}`}>Close</p>
-              <p className={`apr ${dropdown ? "move" : ""}`}>{profile? profile.name: ""}</p>
+              <p className={`apr ${dropdown ? "move" : ""}`}>{profile? profile.name.includes(" ") ? profile.name.substring(0, profile.name.indexOf(' ')) :profile.name: ""}</p>
               <img
                 className={`apr profilePicture ${dropdown ? "move" : ""}`}
                src={profile? profile.avatar: ""}
@@ -137,7 +155,7 @@ await supabase.auth.signOut()
                       profile? profile.avatar: ""
                     }
                   />
-                  <h5 >{profile? profile.name: ""}</h5>
+                  <h5 >{profile?profile.name.includes(" ") ? profile.name.substring(0, profile.name.indexOf(' ')) :profile.name: ""}</h5>
                 </div>
                 <Link class="modifiedLink" href="../myProfile">
                 <div className="menu-item">

@@ -6,6 +6,14 @@
     justify-self: center;
     text-align: left;
     margin-bottom: 4rem;
+    opacity: 0;
+
+}
+
+.Carouselle.is-visible{
+    opacity: 1;
+  transform: none;
+  visibility: visible;
 }
 
 .mybtn{
@@ -47,15 +55,15 @@
 
 .Carouselle h1{
   margin-left:6rem;
+  color:#5BBBCE;
+  cursor: pointer;
+
 }
 
 .icon:hover{
     opacity: 0.6;
 }
 
-.popular h1{
-    cursor: pointer;
-}
 
 .popular h1:hover{
 opacity: 0.9;
@@ -63,7 +71,7 @@ opacity: 0.9;
 
 .slick-arrow.slick-next,
 .slick-arrow.slick-prev{
-background-color: #428cff;
+background-color: rgb(202,78,182);
 height:25px;
 width: 25px;
 display: flex;

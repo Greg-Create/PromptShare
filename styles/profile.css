@@ -79,6 +79,23 @@ opacity: 0.7;
 ;
 }
 
+.loading{
+    position: absolute;
+    top:12rem;
+}
+
+.loading2{
+    position:absolute;
+    z-index:10;
+right:40.5rem;
+top:14rem;
+
+}
+
+.transparent{
+    opacity:0.5
+}
+
 .profilePictureContainer img{
     height:12rem;
     width: 12rem;
@@ -167,6 +184,37 @@ opacity: 0.7;
 .updateprofilePics{
     border-radius: 50%;
     border:2px solid #428cff;
+    height:4rem;
+    width:4rem;
+    padding:2px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.hidden{
+    display: none;
+}
+
+.uploadPrfButton{
+    cursor:pointer;
+    background-color: #428cff;
+    border-radius: 20px;;
+    color:white;
+    height:4rem;
+    width:2rem;
+    padding: 10px;;
+    transition:0.5s;
+    box-shadow:0 0 5px 0 rgba(0,0,0,0.40);;
+}
+
+.border{
+    border:2px solid rgba(0,0,0,0.40);
+    padding:20px;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.20);;;
+}
+
+.uploadPrfButton:hover{
+opacity: 0.8;
 }
 
 .myPosts{

@@ -3,32 +3,66 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #1B1B1B;
+    background-color: white;
     height: 6rem;
-    border-color:  #428cff;
+    border-color:  #4296B0;
     border-width: 30px;
-    z-index:10;
+    z-index:120;
+    width:100%;
+    position: fixed;
+    transition: 0.8s;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow:0 0 4px 0 rgba(0,0,0,0.20);
+    top:0;
+
 
 }
 
-.Header h3{
+
+
+.sharbtn:hover{
+    opacity:0.7;
+}
+
+.websiteName{
     margin-left:7rem;
     color: white;
+    z-index:200;
+
 }
 
 .homebtn{
     text-decoration: none;
+    z-index:200;
 }
+
+
 
 
 .Header h3:nth-child(1){
     cursor: pointer;
+    z-index:200;
+
+}
+.regularText3{
+    color:#5BBBCE;
+}
+
+
+.homebtn{
+    color: #5BBBCE;
+    margin-left: 7rem;
+    
 }
 
 
 .Links{
     color: white;
     display: flex;
+    z-index:200;
+    cursor: pointer;
+
 
 }
 
@@ -36,6 +70,8 @@
 
 .hide{
     display: none;
+    z-index:200;
+
 }
 
 
@@ -45,25 +81,53 @@
     flex-direction: row;
     justify-self: center;
     align-items: center;
-    
+    z-index:200;
+
 
 }
 
 .Links h3{
-    font-weight:normal;
+    color:    #5BBBCE;
+
+}
+
+
+.regularText2{
+    font-weight:bold;
     cursor: pointer;
+    z-index:200;
+    color:#5BBBCE;
+}
+.regularText3{
+    margin-left:7rem;
+    font-weight:bold;
+    cursor: pointer;
+    z-index:200;
+    color:#E59A52;
+
 }
 
 .Links h3:hover{
     opacity: 0.8;
+    z-index:200;
+
 }
 
 
 .Links h3:nth-child(2){
     margin-left: 4rem;
+    z-index:200;
+
 }
 .Links h3:nth-child(3){
     margin-left: 4rem;
+    z-index:200;
+
+}
+
+.regularText{
+    color:#4296B0 ;
+
 }
 
 .buttons{
@@ -72,6 +136,8 @@
     margin-right: 1rem;
     align-items: center;
     justify-content: space-between;
+     z-index:200;
+
 }
 
 .buttons button{
@@ -81,9 +147,30 @@
     border-radius: 15px;
     border: none;
     width:6rem;
-    background-color: #428cff;
-    color: white;
+    box-shadow:0 0 4px 0 rgba(0,0,0,0.25);
+
     transition:1s;
+}
+
+.signinbtn{
+    background-color: white;
+}
+
+.sharebtn{
+    background-color: rgb(202,78,182);
+    color:white;
+    font-weight: bold;
+    box-shadow:0 0 10px 0 rgba(0,0,0,0.25);
+
+
+
+}
+
+
+
+.scrollButton button{
+    box-shadow:0 0 4px 0 rgba(0,0,0,0.20);
+
 }
 
 .apr{
@@ -100,8 +187,9 @@
     border-radius: 50%;
     height:2rem;
     width:2rem;
-    border: 1.5px solid #428cff;
     padding: 1px;
+    box-shadow:0 0 4px 0 rgba(0,0,0,0.20);
+
    
     
 }
@@ -129,6 +217,7 @@
     height:3rem;
     width:3rem;
     padding: 1px;
+    border:1px solid #4296B0;
 
 }
 
@@ -139,18 +228,35 @@
     justify-content: space-evenly;
     background-color: white;
     border-radius:20px;
+    box-shadow:0 0 4px 0 rgba(0,0,0,0.20);
+
     width:8rem;
-    border: 1.5px solid #428cff;
     margin-left: 1.5rem;
     height: 3rem;
     transition: 0.8s;
+    color:#4296B0;
+}
+
+.scrollProfile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(238,236,234);
+    border-radius:20px;
+    width:8rem;
+    margin-left: 1.5rem;
+    height: 3rem;
+    color: #E59A52;
+    box-shadow:0 0 4px 0 rgba(0,0,0,0.20);
+    font-size: 12px;
 }
 
 .menu{
     position: absolute;
     top:80px;
     right:20px;
-    background-color: white;
+    background-color: rgb(238,236,234);
     border-radius: 20px;
     padding:10px 20px;
     width:200px;
@@ -227,6 +333,7 @@ color:#428cff
 
 .heading h5{
     margin-top: 0.5rem;
+    color: #4296B0;
 }
 
 
@@ -251,7 +358,7 @@ color:#428cff
     right:20px;
     height:20px;
     width:20px;
-    background-color: white;
+    background-color: rgb(238,236,234);
     transform: rotate(45deg);
 
 }
