@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./Components/Header/Header";
+import Header from "../components/Header/Header";
 import { useState } from "react";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 
-import { useProfile } from "./Components/contexts/UserContext";
+import { useProfile } from "../components/contexts/UserContext";
 
 
 function Share(props) {

@@ -1,11 +1,11 @@
-import Header from "./Components/Header/Header";
+import Header from "../components/Header/Header";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { useSupabaseClient, useSession } from "@supabase/auth-helpers-react";
-import { useProfile, UserProvider } from "./Components/contexts/UserContext";
+import { useProfile, UserProvider } from "../components/contexts/UserContext";
 import Link from "next/link";
 import { FaLock } from "react-icons/fa";
-import Comments from "./Components/comments/comments";
+import Comments from "../components/comments/comments";
 
 function cardPage() {
   const router = useRouter();

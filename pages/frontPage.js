@@ -1,5 +1,5 @@
-import Header from "./Components/Header/Header";
-import Front from "./Components/Front/Front";
+import Header from "../components/Header/Header";
+import Front from "../components/Front/Front";
 
 function FrontPage(props) {
   return (

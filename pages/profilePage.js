@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Header from "./Components/Header/Header";
+import Header from "../components/Header/Header";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import Cards from "./Components/Cards/Cards";
+import Cards from "../components/Cards/Cards";
 
 function profilePage() {
   const router = useRouter();

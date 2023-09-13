@@ -96,7 +96,7 @@ function Cards(props) {
     if (event.target == event.currentTarget) {
       console.log("Clicked")
       router.push({
-        pathname: "../Components/CardPage/" + props.id,
+        pathname: "./CardPage/" + props.id,
         query: {
           id: props.id,
           author: props.authorid,
@@ -115,7 +115,7 @@ function Cards(props) {
 
   return (
     <div className="card" >
-      <Image src="https://c4.wallpaperflare.com/wallpaper/86/62/569/fantasy-landscape-wallpaper-preview.jpg" alt="fantasy" className="cardImage" onClick={handleClick} />
+      <Image width={100} height={100} src="/fantasy.jpg" alt="fantasy" className="cardImage" onClick={handleClick} />
       <div className="bottom">
         <h4 className="propTitle">{props.question}</h4>
         <h4 className="propAnswer">{props.answer}</h4>
@@ -123,7 +123,7 @@ function Cards(props) {
         <div className="user">
           <Link
             className="link"
-            href={"../Components/profile/" + props.authorid}
+            href={"../components/profile/" + props.authorid}
           >
             <h5 className="postAuthor">@{props.author}</h5>
           </Link>

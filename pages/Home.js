@@ -1,10 +1,10 @@
-import Front from "./Components/Front/Front";
+import Front from "../components/Front/Front";
 
-import {  useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 
 import HomeBody from "./homebody";
-import PromptsGallery from "./Components/Front/Prompts";
+import PromptsGallery from "../components/Front/Prompts";
 
 function Home(props) {
   const router = useRouter();
@@ -37,7 +37,7 @@ function Home(props) {
     }
   }
 
- /* useEffect(() => {
+  /* useEffect(() => {
     setToasts(router.query.success);
   }, [router.query]);
 

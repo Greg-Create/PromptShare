@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./Home";
 import Head from "next/head";
-import Header from "./Components/Header/Header";
+import Header from "../components/Header/Header";
 
 function HomePage() {
   return (

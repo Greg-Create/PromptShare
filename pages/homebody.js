@@ -1,5 +1,5 @@
 import React from "react";
-import Carouselle from "./Components/Carouselle/Carouselle";
+import Carouselle from "../components/Carouselle/Carouselle";
 
 function HomeBody() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, } from "react";
 import Image from "next/image";
-import penguin from "../../../public/isometric_penguin.png";
+//import penguin from "../../../public/isometric_penguin.png";
 
 function Front(props) {
   const [search, setSearch] = useState("");
@@ -33,7 +33,7 @@ function Front(props) {
           <button>Search</button>
         </div>
 
-        <Image  priority src={penguin} alt="penguin" className="prompimg" />
+        <Image  priority src="/isometric_penguin.png" alt="penguin" height={200} width={200} className="prompimg" />
       </div>
 
       {props.downarrow ? <div className="down-arrow"></div> : ""}

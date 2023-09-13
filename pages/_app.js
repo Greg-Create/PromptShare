@@ -14,7 +14,7 @@ import "@/styles/postPage.css";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { useState } from "react";
-import { UserProvider } from "./Components/contexts/UserContext";
+import { UserProvider } from "../components/contexts/UserContext";
 
 export default function App({ Component, pageProps }) {
   const [supabaseClient] = useState(() => createBrowserSupabaseClient());
