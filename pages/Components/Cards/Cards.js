@@ -13,9 +13,7 @@ import {
   FcMusic,
   FcAssistant,
   FcButtingIn,
-} from "react-icons/fc";
-import Fantasy from "/Fantasy.jpg";
-import Image from "next/image";
+} from "react-icons/fc";import Image from "next/image";
 
 function Cards(props) {
   const profile = useProfile();
@@ -117,7 +115,7 @@ function Cards(props) {
 
   return (
     <div className="card" >
-      <Image src={Fantasy} alt="fantasy" className="cardImage" onClick={handleClick} />
+      <Image src="https://c4.wallpaperflare.com/wallpaper/86/62/569/fantasy-landscape-wallpaper-preview.jpg" alt="fantasy" className="cardImage" onClick={handleClick} />
       <div className="bottom">
         <h4 className="propTitle">{props.question}</h4>
         <h4 className="propAnswer">{props.answer}</h4>
