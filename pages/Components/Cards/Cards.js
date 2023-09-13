@@ -14,7 +14,7 @@ import {
   FcAssistant,
   FcButtingIn,
 } from "react-icons/fc";
-import Fantasy from "../../../public/Fantasy.jpg";
+import Fantasy from "/Fantasy.jpg";
 import Image from "next/image";
 
 function Cards(props) {
