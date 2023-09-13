@@ -1,24 +1,21 @@
 import Header from "./Components/Header/Header";
 import { useState } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import GoogleButton from 'react-google-button'
-import { UserProvider } from "./Components/contexts/UserContext";
-
+import GoogleButton from "react-google-button";
 
 function SignIn() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const supabase = useSupabaseClient()
-  
+  const supabase = useSupabaseClient();
+
   async function loginWithGoogle() {
-   await supabase.auth.signInWithOAuth({
-      provider:'google',
-    })
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+    });
   }
 
   return (
     <div>
-      <UserProvider>
       <Header />
       <div className="signIn_container">
         <div className="signIn">
@@ -37,16 +34,13 @@ function SignIn() {
               type="password"
             ></input>
           </div>
-            <p className="noAccount">Don't Have An Account Yet?</p>
-         
+          <p className="noAccount">Don't Have An Account Yet?</p>
+
           <button onClick={() => signInWithEmail()}>Submit</button>
           <p>or</p>
-          <GoogleButton id="google" onClick={()=>loginWithGoogle()}/>
-
-          
+          <GoogleButton id="google" onClick={() => loginWithGoogle()} />
         </div>
       </div>
-      </UserProvider>
     </div>
   );
 }

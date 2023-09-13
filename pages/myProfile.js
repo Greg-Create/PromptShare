@@ -4,10 +4,7 @@ import Navbar from "./Components/Navbar/navbar";
 import Profile from "./Components/Navbar/profileTab";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Link from "next/link";
-import Posts from "./Components/Navbar/myPosts";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
-import { UserProvider } from "./Components/contexts/UserContext";
 
 function myProfile() {
   const router = useRouter();
@@ -20,15 +17,15 @@ function myProfile() {
   });
   return (
     <div>
-      <UserProvider>
-        <Header />
-        <div className="top">
-          <div className="pageContainer">
-            <Navbar />
-            <div><Profile /></div>
+      <Header />
+      <div className="top">
+        <div className="pageContainer">
+          <Navbar />
+          <div>
+            <Profile />
           </div>
         </div>
-      </UserProvider>
+      </div>
     </div>
   );
 }

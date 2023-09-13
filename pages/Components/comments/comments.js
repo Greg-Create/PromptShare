@@ -22,12 +22,12 @@ function comments(props) {
   const [reply, setReply] = useState(false);
   const [valid, setValid] = useState(false);
   const [select, setSelect] = useState();
-  const [replyText,setReplyText] = useState("");
-  const [replies,setReplies] = useState(null)
+  const [replyText, setReplyText] = useState("");
+  const [replies, setReplies] = useState(null);
 
   useEffect(() => {
     fetchComments();
-  },[]);
+  }, []);
 
   function fetchComments() {
     supabase
@@ -61,41 +61,39 @@ function comments(props) {
     await notify();
   }
 
-  async function submitReply(id){
+  async function submitReply(id) {
     await supabase
       .from("commentd")
       .insert({
         content: replyText,
         commenter: profile.id,
         post: props.id,
-        reply:id,
+        reply: id,
       })
       .then((response) => {
         console.log(response);
       });
 
-      await fetchReplies()
+    await fetchReplies();
   }
 
-  async function fetchReplies(){
+  async function fetchReplies() {
     supabase
-    .from("commentd")
-    .select("id,created_at,content,commenter,post,profiles(avatar,name)")
-    .eq("reply", props.id)
-    .then((result) => {
-      if (result.error) {
-        throw result.error;
-      }
-      if (result.data) {
-        setReplies(result.data);
-      }
-    });
+      .from("commentd")
+      .select("id,created_at,content,commenter,post,profiles(avatar,name)")
+      .eq("reply", props.id)
+      .then((result) => {
+        if (result.error) {
+          throw result.error;
+        }
+        if (result.data) {
+          setReplies(result.data);
+        }
+      });
   }
-  
-
 
   function toggle(index) {
-    setSelect(index)
+    setSelect(index);
   }
 
   function togglehide(index) {
@@ -156,38 +154,39 @@ function comments(props) {
                   <div className="commentLikes action">
                     <FcLike />
                   </div>
-                  <div className="commentLikes action" onClick={() => toggle(key)}>
+                  <div
+                    className="commentLikes action"
+                    onClick={() => toggle(key)}
+                  >
                     <FaRegComment />
                   </div>
                 </div>
               </div>
-           
-                <div className={`${togglehide(key)}  `} >
-                  <img className="commentAvatar" src={profile?.avatar} />
-                  <div className="commentSubContainer">
-                    <p>
-                      {profile?.name} {profile?.lastName}
-                    </p>
-                    <div className="commentInputContainer">
-                      <input
-                        className="commentInput"
-                        placeholder="Leave a Reply"
-                        value={replyText}
-                        onChange={(ev) => setReplyText(ev.target.value)}
-                        type="text"
-                      />
-                      <div
-                        className="commentIconContainer"
-                        onClick={() => submitReply(comment.id)}
-                      >
-                        <AiOutlineSend />
-                      </div>
+
+              <div className={`${togglehide(key)}  `}>
+                <img className="commentAvatar" src={profile?.avatar} />
+                <div className="commentSubContainer">
+                  <p>
+                    {profile?.name} {profile?.lastName}
+                  </p>
+                  <div className="commentInputContainer">
+                    <input
+                      className="commentInput"
+                      placeholder="Leave a Reply"
+                      value={replyText}
+                      onChange={(ev) => setReplyText(ev.target.value)}
+                      type="text"
+                    />
+                    <div
+                      className="commentIconContainer"
+                      onClick={() => submitReply(comment.id)}
+                    >
+                      <AiOutlineSend />
                     </div>
                   </div>
                 </div>
-    {replies? replies.map((reply,id) => (<div>
-        
-         </div>)) : ""}
+              </div>
+              {replies ? replies.map((reply, id) => <div></div>) : ""}
             </div>
           ))
         : ""}

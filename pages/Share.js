@@ -3,17 +3,11 @@ import Header from "./Components/Header/Header";
 import { useState } from "react";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
-import SignIn from "./SignIn";
-import Link from "next/link";
-import { useProfile } from "./Components/contexts/UserContext";
 
-import Home from "./Home"
-import Router from "next/router";
-import { UserProvider } from "./Components/contexts/UserContext";
+import { useProfile } from "./Components/contexts/UserContext";
 
 
 function Share(props) {
-
   const categories = [
     "Eductational",
     "Entertainment",
@@ -32,11 +26,10 @@ function Share(props) {
   const session = useSession();
   const supabase = useSupabaseClient();
   const router = useRouter();
-  const profile = useProfile()
+  const profile = useProfile();
 
   //Focus on a niche, add personalization forms for personalized prompts to promp page;
   //
-
 
   /* if (!profile) {
     return <SignIn />;
@@ -68,33 +61,35 @@ function Share(props) {
   }
 
   function createPost() {
-    supabase.from('posts').insert({
-        author:session.user.id,
-        prompt:prompt,
-        prompTitle:title,
-        categories:select,
-    }).then(response=>{
-        if(!response.error){
-            setPrompt("")
-            setTitle("")
-            setSelect([]);
+    supabase
+      .from("posts")
+      .insert({
+        author: session.user.id,
+        prompt: prompt,
+        prompTitle: title,
+        categories: select,
+      })
+      .then((response) => {
+        if (!response.error) {
+          setPrompt("");
+          setTitle("");
+          setSelect([]);
         }
-    })
+      });
 
     router.push(
-        {
-            pathname: '/',
-            query: { success: true }
-        }, '/'
-    )
+      {
+        pathname: "/",
+        query: { success: true },
+      },
+      "/"
+    );
 
-console.log("Subbmited")
-
-}
+    console.log("Subbmited");
+  }
 
   return (
     <div>
-      <UserProvider>
       <Header />
       <div className="s">
         <div className="share">
@@ -133,14 +128,12 @@ console.log("Subbmited")
                 : ""}
             </div>
           </div>
-            
+
           <button onClick={() => createPost()} className="shareP">
             Share Prompt
           </button>
-
         </div>
       </div>
-      </UserProvider>
     </div>
   );
 }
